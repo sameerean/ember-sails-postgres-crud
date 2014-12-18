@@ -1,0 +1,28 @@
+<h1 class="page-header">Contacts List</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Public ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Avatar</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each _contact in model}}
+        
+        <tr>
+            <td>{{#link-to "contact.edit" _contact}}{{_contact.pid}}{{/link-to}}</td>
+            <td>{{_contact.firstName}}</td>
+            <td>{{_contact.lastName}}</td>
+            <td><img {{bind-attr src="_contact.profileImageUrl" alt="_contact.fullName" title="_contact.fullName"}} class="img-circle" width="50px" height="50px"></td>
+            <td>
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="pid" value="<%=_contact.pid%>">
+                    <button type="button" class="btn btn-danger" {{action "delete" _contact}}>X</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

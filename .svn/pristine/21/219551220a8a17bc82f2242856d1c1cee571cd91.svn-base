@@ -1,0 +1,40 @@
+<h1 class="page-header">Edit {{model.fullName}}</h1>
+{{!--<%if(status === "Error") { %>
+<div class="alert alert-danger" role="alert"><%=statusDescription%></div>
+<% } %>
+--}}
+<form role="form">
+   
+  <div class="form-group">
+    <label for="txtPid">Public ID</label>
+    {{input type="text" class="form-control" id="txtPid" placeholder="Public ID" value=model.pid disabled=true}}
+  </div>
+  <div class="form-group">
+    <label for="txtFName">First Name</label>
+    {{input type="text" class="form-control" id="txtFName" placeholder="First Name" value=model.firstName}}
+  </div>
+  <div class="form-group">
+    <label for="txtLName">Last Name</label>
+    {{input type="text" class="form-control" id="txtLName" placeholder="Last Name" value=model.lastName}}
+  </div>
+  <div class="form-group">
+    <label for="txtDob">Date of Birth</label>
+    {{input type="text" class="form-control" id="txtDob" placeholder="Date of Birth" value=model.dateOfBirth}}
+  </div>
+  <div class="form-group">
+    <label for="txtEmail">Email</label>
+    {{input type="text" class="form-control" id="txtEmail" placeholder="Email Address" value=model.email}}
+  </div>
+  <div class="form-group">
+    <label for="txtPhone">Phone Number</label>
+    {{input type="text" class="form-control" id="txtPhone" placeholder="Phone" value=model.phone}}
+  </div>
+  <div class="form-group">
+    <label for="txtProfileImageUrl">Profile Image URL</label>
+    {{input type="text" class="form-control" id="txtProfileImageUrl" placeholder="Profile Image URL" value=model.profileImageUrl}}
+  </div>
+    
+      <p></p>
+    
+  <button type="submit" {{action "save"}}>Submit</button>
+</form>
